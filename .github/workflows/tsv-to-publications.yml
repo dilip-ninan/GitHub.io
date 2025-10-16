@@ -1,1 +1,72 @@
+name: Build publication markdown files from TSV
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build-from-tsv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate _publications/*.md from TSV
+        run: |
+          python - << 'PY'
+          import csv, re, os, pathlib, unicodedata, datetime
+          ROOT = pathlib.Path(".")
+          TSV = ROOT / "markdown_generator" / "publications.tsv"
+          OUTDIR = ROOT / "_publications"
+          OUTDIR.mkdir(exist_ok=True)
+          def slugify(s):
+              s = unicodedata.normalize("NFKD", s)
+              s = "".join(c for c in s if not unicodedata.combining(c))
+              s = re.sub(r"[^\w\s-]", "", s).strip().lower()
+              s = re.sub(r"[\s_-]+", "-", s)
+              return s[:60] or "pub"
+          with TSV.open(newline="", encoding="utf-8") as f:
+              rows = list(csv.DictReader(f, delimiter="\t"))
+          for r in rows:
+              title = (r.get("title") or "").strip()
+              year  = (r.get("year") or "").strip()
+              authors = (r.get("authors") or "").strip()
+              venue = (r.get("venue") or "").strip()
+              doi   = (r.get("doi") or "").strip()
+              paperurl = (r.get("paperurl") or "").strip()
+              abstract = (r.get("abstract") or "").strip()
+              # filename: YYYY-01-01-slug.md (AcademicPages convention)
+              y = year if year.isdigit() else "9999"
+              date = f"{y}-01-01"
+              slug = slugify(title or venue or "publication")
+              fn = f"{date}-{slug}.md"
+              path = OUTDIR / fn
+              permalink = f"/publication/{slug}"
+              fm = []
+              fm.append("---")
+              fm.append(f'title: "{title.replace(\'"\', \'\\\\"\')}"' if title else "title: \"Untitled\"")
+              fm.append("collection: publications")
+              fm.append(f"permalink: {permalink}")
+              fm.append(f"date: {date}")
+              if venue:   fm.append(f'venue: "{venue.replace(\'"\', \'\\\\"\')}"')
+              if authors: fm.append(f'authors: "{authors.replace(\'"\', \'\\\\"\')}"')
+              if doi:     fm.append(f'doi: "{doi}"')
+              if paperurl: fm.append(f'paperurl: "{paperurl}"')
+              if abstract: fm.append(f'abstract: "{abstract.replace(\'"\', \'\\\\"\')}"')
+              fm.append("---")
+              body = ""
+              path.write_text("\n".join(fm) + "\n\n" + body, encoding="utf-8")
+          print(f"Wrote {len(rows)} files to {OUTDIR}")
+          PY
+
+      - name: Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Generate publication markdown from TSV"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
 
