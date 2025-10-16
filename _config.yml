@@ -27,7 +27,7 @@ github_username          : dilip-ninan
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "dn5.png"
+  avatar           : "dn5.jpg"
   name             : "Dilip Ninan"
   pronouns         : # example: "she/her"  
   bio              : "I'm a philosophy professor at Tufts University"
