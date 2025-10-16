@@ -1,4 +1,21 @@
-pub_date	title	venue	excerpt	citation	url_slug	paper_url	slides_url
-2009-10-01	Paper Title Number 1	Journal 1	This paper is about the number 1. The number 2 is left for future work.	Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).	paper-title-number-1	http://academicpages.github.io/files/paper1.pdf	http://academicpages.github.io/files/slides1.pdf
-2010-10-01	Paper Title Number 2	Journal 1	This paper is about the number 2. The number 3 is left for future work.	Your Name, You. (2010). "Paper Title Number 2." <i>Journal 1</i>. 1(2).	paper-title-number-2	http://academicpages.github.io/files/paper2.pdf	http://academicpages.github.io/files/slides2.pdf
-2015-10-01	Paper Title Number 3	Journal 1	This paper is about the number 3. The number 4 is left for future work.	Your Name, You. (2015). "Paper Title Number 3." <i>Journal 1</i>. 1(3).	paper-title-number-3	http://academicpages.github.io/files/paper3.pdf	http://academicpages.github.io/files/slides3.pdf
+title	year	authors	venue	paperurl	abstract	bibtex	doi
+An Expressivist Theory of Taste Predicates	Forthcoming	Ninan, Dilip	Philosophers' Imprint				
+First-Person Propositions	2024	Michael Caie, Dilip Ninan	Philosophers' Imprint				
+Modality and the Future	2024	Ninan, Dilip	Oxford University Press UK				
+Modality and the Future: Critical Notice of The Modal Future by Fabrizio Cariani	2024	Dilip Ninan	Analysis				
+Assertion, Evidence, and the Future	2022	Ninan, Dilip	Philosophical Review				
+The Projection Problem for Predicates of Taste	2020	Dilip Ninan	Semantics and Linguistic Theory				
+De Se Attitudes and Action	2020	Ninan, Dilip	The Routledge Handbook of Linguistic Reference				
+Naming and Epistemic Necessity	2019	Ninan, Dilip	Noûs				
+Quantification and Epistemic Modality	2018	Ninan, Dilip	Philosophical Review				
+Relational Semantics and Domain Semantics for Epistemic Modals	2016	Ninan, Dilip	Journal of Philosophical Logic				
+What Is the Problem of De Se Attitudes?	2016	Ninan, Dilip	About Oneself: De Se Attitudes and Communication				
+Taste Predicates and the Acquaintance Inference	2014	Ninan, Dilip	Semantics and Linguistic Theory				
+Self-Location and Other-Location	2013	Dilip Ninan	Philosophy and Phenomenological Research				10.1111/phpr.12051
+Propositions, Semantic Values, and Rigidity	2012	Dilip Ninan	Philosophical Studies				
+Counterfactual Attitudes and Multi-Centered Worlds	2012	Ninan, Dilip	Semantics and Pragmatics				10.3765/sp.5.5
+De Se Attitudes: Ascription and Communication	2010	Dilip Ninan	Philosophy Compass				
+Semantics and the Objects of Assertion	2010	Dilip Ninan	Linguistics and Philosophy				10.1007/s10988-011-9084-7
+Persistence and the First-Person Perspective	2009	Ninan, Dilip	Philosophical Review				
+Imagination, Content, and the Self	2008	Ninan, Dilip	MIT				
+Two Puzzles about Deontic Necessity	2005	Ninan, Dilip	MITWPL				
