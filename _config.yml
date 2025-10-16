@@ -35,6 +35,10 @@ author:
   employer         : "Tufts University"
   uri              : # URL
   email            : "dilip.ninan@tufts.edu" 
+  links:  
+    - label: "PhilPapers"
+      icon: "fas fa-book"
+      url: "https://philpapers.org/profile/XXXX"
 
   # Academic websites
   academia         : # URL
