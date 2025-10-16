@@ -5,8 +5,5 @@ permalink: /about/
 author_profile: true
 ---
 
-
-![Dilip Ninan](../images/dn5.jpg){: .align-left style="width:180px; margin-right:15px;"}
-
 I am an Associate Professor of Philosophy at Tufts University.  
 My research focuses on philosophy of language, formal semantics, and epistemology.  
