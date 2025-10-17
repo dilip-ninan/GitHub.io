@@ -34,7 +34,7 @@ author:
   location         : 
   employer         : "Tufts University"
   uri              : # URL
-  email            : "dilip.ninan@tufts.edu" 
+  email            : "mailto:dilip.ninan@tufts.edu" 
   links:  
     - label: "PhilPapers"
       icon: "fas fa-book"
